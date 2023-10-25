@@ -1,7 +1,10 @@
+@import "./substyle.css";
+
 h1 {
-    color: chartreuse;
+    color: burlywood;
 }
 
 .testingp {
-    color: red;
+    color: blue;
+    font-family: 'Alumni Sans Collegiate One', sans-serif;
 }

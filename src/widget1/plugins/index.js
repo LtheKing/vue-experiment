@@ -35,9 +35,6 @@ export const pluginsWrapper = {
     Vue.use(i18n);
 
     //Vue Axios
-    // const axiosInstance = axios.create({
-    //   withCredentials: true,
-    // });
-    // Vue.use(axiosInstance)
+    Vue.config.globalProperties.$axios = axios;
   },
 };

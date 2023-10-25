@@ -1,4 +1,3 @@
-import App from "../App.vue";
 import style from "./style/Widget1.css";
 import { pluginsWrapper } from "./plugins";
 import {
@@ -9,9 +8,8 @@ import {
 import { createApp } from "vue";
 import { createWebComponent } from "vue-web-component-wrapper";
 import Widget1Component from "./components/Widget1Component.vue"
-import config from "../config";
 
-createWebComponent({
+const widget1 = createWebComponent({
   rootComponent: Widget1Component,
   elementName: "widget-one",
   plugins: pluginsWrapper,
@@ -21,3 +19,7 @@ createWebComponent({
   createApp,
   getCurrentInstance,
 });
+
+//testing module.exports
+// import ex from "./module.js";
+// console.log(ex);

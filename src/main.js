@@ -16,21 +16,22 @@ import Custom1 from './components/custom/custom1.vue'
 import { createWebComponent } from "vue-web-component-wrapper";
 import { pluginsWrapper } from './plugins';
 import axios from "axios";
+// import config from "./config.js";
 
 const custom1 = VueDefineCustomElement(Custom1);
 customElements.define('custom-satu', custom1)
 
-createWebComponent({
-  rootComponent: App,
-  elementName: "my-web-component",
-  plugins: pluginsWrapper,
-  cssFrameworkStyles: customBase,
-  VueDefineCustomElement,
-  h,
-  createApp,
-  getCurrentInstance,
-});
+// createWebComponent({
+//   rootComponent: App,
+//   elementName: "my-web-component",
+//   plugins: pluginsWrapper,
+//   cssFrameworkStyles: customBase,
+//   VueDefineCustomElement,
+//   h,
+//   createApp,
+//   getCurrentInstance,
+// });
 
-// const app = createApp(App);
-// app.use(defaultRoutes);
-// app.mount("#app");
+const app = createApp(App);
+app.config.globalProperties.$axios = axios;
+app.mount("#app");
