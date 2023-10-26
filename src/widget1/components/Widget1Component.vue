@@ -1,10 +1,11 @@
 <template>
     <div>
         <h1>Widget 1 Token : {{ token }}</h1>
-        <p class="testingp">testing css</p>
-        <p class="subs">testing substyle</p>
+        <!-- <p class="testingp">testing css</p>
+        <p class="subs">testing substyle</p> -->
         <!-- <img src="../../assets/img/speda.png" /> -->
         <!-- <ChildWidget1 /> -->
+        <button @click="sendEvent">Call Heroes</button>
     </div>
 </template>
 
@@ -24,8 +25,20 @@ export default {
     props: [
         "token"
     ],
-    setup() {
-        return "this is setup"
+    setup(props, context) {
+        function sendEvent()
+        {
+            context.emit('callHeroes', 'Aldi')
+        }
+
+        function callHeroes(hero) {
+            alert(`Calling ${hero}`)
+        }
+
+        return {
+            sendEvent,
+            callHeroes
+        }
     },
     mounted() {
         // this.test1();
