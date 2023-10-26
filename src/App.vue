@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1 class="appTitle">this is App the root</h1>
+    <CustomMain />
   </div>
 </template>
 
@@ -12,7 +13,10 @@
 </style>
 
 <script>
+import CustomMain from "./Main.vue";
+
 export default {
+  components: {CustomMain},
   name: 'app',
   props: ['msg'],
   mounted()

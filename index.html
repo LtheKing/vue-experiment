@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
-  </head>
-  <body>
-     <!-- <div id="app"></div> -->
-    <!-- <my-web-component lang="de" route="/route1" class="my-web-component" api-token="++++++++++++++++++++++++"
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vite App</title>
+</head>
+
+<body>
+  <!-- <div id="app"></div> -->
+  <!-- <my-web-component lang="de" route="/route1" class="my-web-component" api-token="++++++++++++++++++++++++"
       base-uri="https://my.base.uri"></my-web-component> -->
-    <!-- <custom-satu></custom-satu> -->
-    <!-- <my-web-component></my-web-component> -->
-    <div>
-      <widget-one @callHeroes="callHeroes"></widget-one>
-    </div>
-    <script type="module" src="/src/main.js"></script>
-    <script type="module" src="/src/widget1/MainWidget1.js"></script>
-  </body>
+  <!-- <custom-satu></custom-satu> -->
+  <!-- <my-web-component></my-web-component> -->
+  <widget-one></widget-one>
+
+  <!-- <script type="module" src="/src/main.js"></script> -->
+  <script type="module" src="/src/widget1/MainWidget1.js"></script>
+</body>
+
+<script>
+  function getToken()
+  {
+    debugger;
+    console.log('new token');
+    return "new token";
+  }
+</script>
+
 </html>

@@ -5,7 +5,7 @@
         <p class="subs">testing substyle</p> -->
         <!-- <img src="../../assets/img/speda.png" /> -->
         <!-- <ChildWidget1 /> -->
-        <button @click="sendEvent">Call Heroes</button>
+        <button @click="getNewToken()">Get Token</button>
     </div>
 </template>
 
@@ -28,21 +28,22 @@ export default {
     setup(props, context) {
         function sendEvent()
         {
-            context.emit('callHeroes', 'Aldi')
+            context.emit('getToken', 'asdkjfa123!@#')
         }
 
-        function callHeroes(hero) {
-            alert(`Calling ${hero}`)
+        function getToken(token) {
+            alert(`Calling ${token}`)
         }
 
         return {
             sendEvent,
-            callHeroes
+            getToken
         }
     },
     mounted() {
         // this.test1();
-        api.testApi();
+        // api.testApi();
+        this.$emit('getToken');
     }, 
     created() {
         // this.test1();
@@ -91,6 +92,10 @@ export default {
             const data = response.data;
             console.log(data);
             return data;
+        },
+
+        getNewToken() {
+            this.$emit('getToken');
         }
     }
 }
