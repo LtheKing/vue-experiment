@@ -2,9 +2,11 @@
 
 h1 {
     color: burlywood;
+    font-family: "Gill Sans Extrabold", sans-serif;;
 }
 
 .testingp {
     color: blue;
-    font-family: 'Alumni Sans Collegiate One', sans-serif;
+    font-family: "Times New Roman", Times, serif;
+    font-size: large;
 }

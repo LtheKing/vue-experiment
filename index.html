@@ -15,9 +15,8 @@
   <custom-satu id="custom-satu"></custom-satu>
   <!-- <my-web-component></my-web-component> -->
   <widget-one token="abc123!" id="widget1"></widget-one>
-  <!-- <button>testing di index</button> -->
   <script type="module" src="/src/main.js"></script>
-  <!-- <script type="module" src="/src/widget1/MainWidget1.js"></script> -->
+  <script type="module" src="/src/widget1/MainWidget1.js"></script>
 </body>
 
 <script>
@@ -30,8 +29,7 @@
 
   const element = document.getElementById('widget1');
   element.addEventListener('myCustomEvent', (event) => {
-    debugger;
-    console.log(event);
+    element.token = 'changed';
   })
 
   const custom1 = document.getElementById('custom-satu');

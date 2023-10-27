@@ -23,31 +23,6 @@ import style from "./widget1/style/Widget1.css";
 const custom1 = VueDefineCustomElement(Custom1);
 customElements.define('custom-satu', custom1)
 
-const widget1 = VueDefineCustomElement(Widget1Component);
-customElements.define("widget-one", widget1);
-
-// const widget1 = createWebComponent({
-//   rootComponent: Widget1Component,
-//   elementName: "widget-one",
-//   plugins: pluginsWrapper,
-//   cssFrameworkStyles: style,
-//   VueDefineCustomElement,
-//   h,
-//   createApp,
-//   getCurrentInstance,
-// });
-
-// createWebComponent({
-//   rootComponent: App,
-//   elementName: "my-web-component",
-//   plugins: pluginsWrapper,
-//   cssFrameworkStyles: customBase,
-//   VueDefineCustomElement,
-//   h,
-//   createApp,
-//   getCurrentInstance,
-// });
-
 const app = createApp(App);
 app.config.globalProperties.$axios = axios;
 app.mount("#app");

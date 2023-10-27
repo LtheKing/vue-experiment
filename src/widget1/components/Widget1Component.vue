@@ -1,8 +1,8 @@
 <template>
     <div>
         <h1>Widget 1 Token : {{ token }}</h1>
-        <!-- <p class="testingp">testing css</p>
-        <p class="subs">testing substyle</p> -->
+        <p class="testingp">testing css</p>
+        <!-- <p class="subs">testing substyle</p> -->
         <!-- <img src="../../assets/img/speda.png" /> -->
         <ChildWidget1 @custom-change="handleCustomChange" />
         <p>Uppercase: {{ uppercase }}</p>
@@ -12,8 +12,7 @@
 
 <style>
 .testingp {
-    color: red;
-    font-family: 'Alumni Sans Collegiate One', sans-serif;
+    color: green;
 }
 
 
