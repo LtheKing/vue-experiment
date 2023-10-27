@@ -21,11 +21,6 @@ const widget1 = createWebComponent({
   getCurrentInstance,
 });
 
-eventBus.$on('my-event', eventData => {
-  // Handle the event in the Vue instance
-  console.log('Event Data:', eventData);
-});
-
 // eventBus.config.globalProperties.$bus.on("my-event", (eventData) => {
 //   // Handle the event in the Vue instance
 //   console.log("Event Data:", eventData);

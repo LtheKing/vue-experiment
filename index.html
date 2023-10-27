@@ -12,12 +12,12 @@
   <!-- <div id="app"></div> -->
   <!-- <my-web-component lang="de" route="/route1" class="my-web-component" api-token="++++++++++++++++++++++++"
       base-uri="https://my.base.uri"></my-web-component> -->
-  <!-- <custom-satu></custom-satu> -->
+  <custom-satu id="custom-satu"></custom-satu>
   <!-- <my-web-component></my-web-component> -->
   <widget-one token="abc123!" id="widget1"></widget-one>
-
-  <!-- <script type="module" src="/src/main.js"></script> -->
-  <script type="module" src="/src/widget1/MainWidget1.js"></script>
+  <!-- <button>testing di index</button> -->
+  <script type="module" src="/src/main.js"></script>
+  <!-- <script type="module" src="/src/widget1/MainWidget1.js"></script> -->
 </body>
 
 <script>
@@ -28,21 +28,59 @@
     return "new token";
   }
 
+  const element = document.getElementById('widget1');
+  element.addEventListener('myCustomEvent', (event) => {
+    debugger;
+    console.log(event);
+  })
+
+  const custom1 = document.getElementById('custom-satu');
+    custom1.addEventListener('myCustomEvent', (event) =>
+    {
+      debugger;
+      console.log(event);
+    })
+
+
   // Add a custom event listener to the document
-  // document.addEventListener('my-vue-event', function (event)
+  // document.addEventListener('emitt', function (event)
   // {
   //   console.log('Event Data:', event.detail);
   // });
 
   // // Example of dispatching a custom event from a Vue component
-  // const button = document.querySelector('button');
-  // button.addEventListener('click', function ()
+  // const widget1 = document.getElementById('widget1');
+  // widget1.addEventListener('emitt', function ()
   // {
-  //   const customEvent = new CustomEvent('my-vue-event', {
+  //   const customEvent = new CustomEvent('emitt', {
   //     detail: 'Event Data from Vue'
   //   });
   //   document.dispatchEvent(customEvent);
   // });
+
+  // const customEvent = new CustomEvent('myCustomEvent', {
+  //     detail: {
+  //       message: 'Hello, this is a custom event!'
+  //     },
+  //     bubbles: true,
+  //     cancelable: true
+  //   });
+
+  //   // Get the target element
+  //   const element = document.getElementById('widget1');
+
+  //   // Add an event listener to listen for the custom event
+  //   element.addEventListener('myCustomEvent', function (event)
+  //   {
+  //     console.log('Custom event received:', event.detail.message);
+  //   });
+
+  //   //THIS IS THE PROBLEM
+  //   // Dispatch the custom event when the button is clicked
+  //   element.addEventListener('click', function ()
+  //   {
+  //     element.dispatchEvent(customEvent);
+  //   });
 
 </script>
 

@@ -36,5 +36,14 @@ export const pluginsWrapper = {
 
     //Vue Axios
     Vue.config.globalProperties.$axios = axios;
+
+    //create customEvent
+    // function customEvent() {
+    //   console.log("custom event from pluginswrapper");
+    // }
+
+    // // console.log(Vue.config.globalProperties);
+    // Vue.config.globalProperties.$customEvent = customEvent();
+
   },
 };

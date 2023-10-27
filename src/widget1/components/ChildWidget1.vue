@@ -3,7 +3,7 @@
         <h1>this is child widget 1</h1>
         <div>
             <label>My Custom Input</label>
-            <input type="text" placeholder="Custom input!" @helo="handleChange" />
+            <input type="text" placeholder="Custom input!" @input="handleChange" />
         </div>
     </div>
 </template>

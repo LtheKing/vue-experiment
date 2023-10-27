@@ -13,13 +13,29 @@ import {
 } from "vue";
 
 import Custom1 from './components/custom/custom1.vue'
+import Widget1Component from "./widget1/components/Widget1Component.vue";
 import { createWebComponent } from "vue-web-component-wrapper";
 import { pluginsWrapper } from './plugins';
 import axios from "axios";
+import style from "./widget1/style/Widget1.css";
 // import config from "./config.js";
 
 const custom1 = VueDefineCustomElement(Custom1);
 customElements.define('custom-satu', custom1)
+
+const widget1 = VueDefineCustomElement(Widget1Component);
+customElements.define("widget-one", widget1);
+
+// const widget1 = createWebComponent({
+//   rootComponent: Widget1Component,
+//   elementName: "widget-one",
+//   plugins: pluginsWrapper,
+//   cssFrameworkStyles: style,
+//   VueDefineCustomElement,
+//   h,
+//   createApp,
+//   getCurrentInstance,
+// });
 
 // createWebComponent({
 //   rootComponent: App,
