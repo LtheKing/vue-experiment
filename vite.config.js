@@ -14,7 +14,9 @@ export default defineConfig({
       {
         template: {
           compilerOptions: {
-            isCustomElement: (tag) => ["widget-"].includes(tag),
+            isCustomElement: (tag) => [
+              "widget-",
+            ].includes(tag),
           },
         },
       }

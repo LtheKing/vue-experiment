@@ -4,48 +4,45 @@
         <!-- <p class="testingp">testing css</p>
         <p class="subs">testing substyle</p> -->
         <!-- <img src="../../assets/img/speda.png" /> -->
-        <!-- <ChildWidget1 /> -->
-        <button @click="getNewToken()">Get Token</button>
+        <ChildWidget1 @custom-change="handleCustomChange" />
+        <p>Uppercase: {{ uppercase }}</p>
+        <button @click="emitEvent">Emit Event</button>
     </div>
 </template>
 
 <style>
-    .testingp {
-        color: red;
-        font-family: 'Alumni Sans Collegiate One', sans-serif;
-    }
+.testingp {
+    color: red;
+    font-family: 'Alumni Sans Collegiate One', sans-serif;
+}
 </style>
 
 <script>
-// import ChildWidget1 from "./ChildWidget1.vue"
+import ChildWidget1 from "./ChildWidget1.vue"
 import api from "../api";
 import NProgress from "nprogress";
 
 export default {
+    components: {
+        ChildWidget1
+    },
     props: [
         "token"
     ],
-    setup(props, context) {
-        function sendEvent()
-        {
-            context.emit('getToken', 'asdkjfa123!@#')
-        }
-
-        function getToken(token) {
-            alert(`Calling ${token}`)
-        }
-
+    data()
+    {
         return {
-            sendEvent,
-            getToken
+            uppercase: ''
         }
     },
-    mounted() {
+    mounted()
+    {
         // this.test1();
         // api.testApi();
-        this.$emit('getToken');
-    }, 
-    created() {
+    },
+    created()
+    {
+        this.emitEvent();
         // this.test1();
         this.$axios.interceptors.request.use(
             (config) =>
@@ -86,16 +83,21 @@ export default {
         );
     },
     methods: {
-        async test1() {
-            const headers = { "Content-Type": "application/json"};
+        async test1()
+        {
+            const headers = { "Content-Type": "application/json" };
             const response = await this.$axios.get("https://jsonplaceholder.typicode.com/users", { headers });
             const data = response.data;
             console.log(data);
             return data;
         },
-
-        getNewToken() {
-            this.$emit('getToken');
+        handleCustomChange(s)
+        {
+            this.uppercase = s
+        },
+        emitEvent()
+        {
+            this.$emit('my-event', 'Event Data');
         }
     }
 }

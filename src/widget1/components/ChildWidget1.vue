@@ -1,6 +1,10 @@
 <template>
     <div>
         <h1>this is child widget 1</h1>
+        <div>
+            <label>My Custom Input</label>
+            <input type="text" placeholder="Custom input!" @helo="handleChange" />
+        </div>
     </div>
 </template>
 
@@ -13,10 +17,13 @@ h1 {
 <script>
 import api from "../api";
 
-    export default {
-        mounted() {
-            const result = api.getUsers();
-            console.log(result);
+export default {
+    name: 'ChildWidget1',
+    methods: {
+        handleChange(event)
+        {
+            this.$emit("customChange", event.target.value.toUpperCase())
         }
     }
+}
 </script>

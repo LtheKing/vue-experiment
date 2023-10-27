@@ -14,7 +14,7 @@
       base-uri="https://my.base.uri"></my-web-component> -->
   <!-- <custom-satu></custom-satu> -->
   <!-- <my-web-component></my-web-component> -->
-  <widget-one></widget-one>
+  <widget-one token="abc123!" id="widget1"></widget-one>
 
   <!-- <script type="module" src="/src/main.js"></script> -->
   <script type="module" src="/src/widget1/MainWidget1.js"></script>
@@ -27,6 +27,23 @@
     console.log('new token');
     return "new token";
   }
+
+  // Add a custom event listener to the document
+  // document.addEventListener('my-vue-event', function (event)
+  // {
+  //   console.log('Event Data:', event.detail);
+  // });
+
+  // // Example of dispatching a custom event from a Vue component
+  // const button = document.querySelector('button');
+  // button.addEventListener('click', function ()
+  // {
+  //   const customEvent = new CustomEvent('my-vue-event', {
+  //     detail: 'Event Data from Vue'
+  //   });
+  //   document.dispatchEvent(customEvent);
+  // });
+
 </script>
 
 </html>
